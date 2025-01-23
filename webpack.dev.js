@@ -40,6 +40,19 @@ export default {
                 options: {
                     presets: ['@babel/preset-env']
                 }
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                        }
+                    },
+                ],
+
+                type: 'javascript/auto'
             }
         ],
     },
