@@ -37,13 +37,13 @@ export default {
                 test: /\.(png|jpg|gif|svg)$/i,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            limit: 8192,
+                            name: '[name].[hash].[ext]',
+                            outputPath: 'assets'
                         }
                     },
                 ],
-
                 type: 'javascript/auto'
             }
         ],

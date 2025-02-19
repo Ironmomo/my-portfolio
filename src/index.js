@@ -1,10 +1,51 @@
 import './styles/style.scss'
 import TypeWriter from "./TypeWriter.js";
+import './imageLoader.js'
 
 const tw1 = new TypeWriter(["Engineer", "Designer", "Architect"], 150, "profession")
 tw1.write()
 
 gsap.registerPlugin(ScrollTrigger)
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: '.work-title',
+        start: 'center center',
+        end: '+=1200',
+        scrub: true,
+        pin: true
+    }
+})
+    .fromTo('.work-title',
+        { opacity: 0 },
+        { opacity: 1 }
+    )
+
+gsap.utils.toArray('.work article').forEach((article) => {
+    gsap.from(article, {
+        scrollTrigger: {
+            trigger: article,
+            start: 'top 75%'
+        },
+        opacity: 0,
+        x: '-100%',
+        duration: 1
+    })
+})
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: '.projects-title',
+        start: 'center center',
+        end: '+=1200',
+        scrub: true,
+        pin: true
+    }
+})
+    .fromTo('.projects-title',
+        { opacity: 0 },
+        { opacity: 1 }
+    )
 
 gsap.to('.work-progress', {
     scrollTrigger: {
@@ -37,6 +78,20 @@ gsap.to('.projects-progress', {
     },
     ease: 'none'
 });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: '.education-title',
+        start: 'center center',
+        end: '+=1200',
+        scrub: true,
+        pin: true
+    }
+})
+    .fromTo('.work-title',
+        { opacity: 0 },
+        { opacity: 1 }
+    )
 
 gsap.to('.work-hexagon', {
     scrollTrigger: {
