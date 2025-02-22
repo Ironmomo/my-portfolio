@@ -34,7 +34,7 @@ export default {
                 }
             },
             {
-                test: /\.(png|jpg|gif|svg)$/i,
+                test: /\.(png|jpg|gif|svg|pdf)$/i,
                 use: [
                     {
                         loader: 'file-loader',

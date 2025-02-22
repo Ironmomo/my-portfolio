@@ -1,6 +1,7 @@
 import './styles/style.scss'
 import TypeWriter from "./TypeWriter.js";
 import './imageLoader.js'
+import './downloadLoader.js'
 
 const tw1 = new TypeWriter(["Engineer", "Designer", "Architect"], 150, "profession")
 tw1.write()
@@ -88,7 +89,7 @@ gsap.timeline({
         pin: true
     }
 })
-    .fromTo('.work-title',
+    .fromTo('.education-title',
         { opacity: 0 },
         { opacity: 1 }
     )

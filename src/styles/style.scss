@@ -1,6 +1,6 @@
 :root {
   --primary-color: #0a192f;
-  --secondary-color: #004462;
+  --secondary-color: #101f37;
   --accent-color: #64ffda;
   --primary-font-color: #ccd6f6;
   --secondary-font-color: #8892b0;
@@ -133,6 +133,36 @@ li {
   background-color: var(--primary-font-color);
 }
 
+.cv-download {
+  position: fixed;
+  top: var(--footer-height);
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s all linear;
+
+  a {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    svg {
+      color: var(--primary-font-color);
+    }
+  }
+}
+.cv-download:hover {
+  scale: 1.1;
+  a {
+    svg {
+      color: var(--accent-color);
+    }
+  }
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -235,7 +265,7 @@ main {
       width: 100%;
       height: fit-content;
       padding: var(--margin-xl);
-      background-color: #101f37;
+      background-color: var(--secondary-color);
       border-radius: var(--border-radius);
       .image-container {
         position: relative;
@@ -337,7 +367,7 @@ main {
         height: 100%;
         gap: var(--margin-l);
         padding: var(--margin-xl);
-        background-color: #101f37;
+        background-color: var(--secondary-color);
         border-radius: var(--border-radius);
         .image-container {
           position: relative;
@@ -676,6 +706,13 @@ footer {
         transition: height 0.2s ease;
       }
     }
+  }
+
+  .cv-download {
+    bottom: var(--footer-height);
+    right: 10px;
+    top: unset;
+    left: unset;
   }
 }
 

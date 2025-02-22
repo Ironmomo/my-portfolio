@@ -16,9 +16,6 @@ export default {
     },
     devtool: 'source-map',
     devServer: {
-        static: {
-            directory: path.resolve(__dirname, 'dist'),
-        },
         port: 4200,
         open: true,
         hot: true,
@@ -42,7 +39,7 @@ export default {
                 }
             },
             {
-                test: /\.(png|jpg|gif|svg)$/i,
+                test: /\.(png|jpg|gif|svg|pdf)$/i,
                 use: [
                     {
                         loader: 'file-loader',
